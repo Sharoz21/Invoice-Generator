@@ -1,0 +1,85 @@
+
+extends base
+block content      
+  form.container.mt-5(action='')
+    .row
+      .col-4
+        .input-group.mb-3
+          input#heading.form-control.input(type='text' placeholder='heading' required)
+          span.input-group-text #
+          input#num.form-control.input(type='number' placeholder='no.' required)
+      .col
+        .input-group.mb-3
+          input#from.form-control.input(type='text' placeholder='who is this invoice from?' required)
+    .row.my-2
+      .col-3
+        label.form-label(for='date') Date: 
+          span.text-danger *
+        .input-group.mb-3
+          input#date.form-control.input(type='date' required)
+      .col-3
+        label.form-label(for='paymentTerms') Payment Terms: 
+          span.text-danger *
+        .input-group.mb-3
+          input#paymentTerms.form-control.input(type='text' required)
+      .col-3
+        label.form-label(for='due-date') Due Date:
+        .input-group.mb-3
+          input#dueDate.form-control.input(type='date')
+      .col-3
+        label.form-label(for='PONumber') PO Number: 
+        .input-group.mb-3
+          input#PONumber.form-control.input(type='text')
+    .row.my-2.bg-dark.text-white.p-1.rounded
+      .col-5 Item
+      .col Quantity
+      .col Rate
+    div
+      #item-list.my-2
+        .row.list-item
+          .col-5
+            input.form-control.item-name(type='text')
+          .col
+            input.form-control.item-quantity(type='number')
+          .col
+            input.form-control.item-rate(type='number')
+      button#add-btn.btn.btn-primary + Item
+      button#remove-btn.btn.btn-danger.mx-1 - Item
+    .row.my-3
+      .col-3
+        label.form-label(for='bill') Bill to: 
+          span.text-danger *
+        .input-group.mb-3
+          input#bill.form-control.input(type='text' required)
+      .col-3
+        label.form-label(for='ship') Ship to:
+        .input-group.mb-3
+          input#ship.form-control.input(type='text')
+      .col-3
+        label.form-label(for='amountPaid') Amount Paid: 
+          span.text-danger *
+        .input-group.mb-3
+          input#amountPaid.form-control.input(type='number' value='0' required)
+      .col-3
+        label.form-label(for='tax') Tax: 
+          span.text-danger *
+        .input-group.mb-3
+          input#tax.form-control.input(type='number' value='0' required)
+    .row.my-3
+      .col
+        .form-group
+          label(for='terms') Terms:
+          textarea#terms.form-control.input(style='resize: none' rows='5')
+      .col
+        .form-group
+          label(for='notes') Notes:
+          textarea#notes.form-control.input(style='resize: none' rows='5')
+
+
+    div
+      label.my-1(for='upload' style='display: block')
+        | Upload Logo:
+      input#upload.form-control-file(type='file' name='logo' accept="image/*")
+    input.btn.btn-primary.my-3(type='submit' value='Generate Invoice')
+    script(src='./js/addItemRow.js')
+    script(src='./js/sendFormData.js')

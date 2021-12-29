@@ -1,0 +1,24 @@
+{
+	"name": "invoice-generator",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "^1.19.1",
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"multer": "^1.4.4",
+		"nodemon": "^2.0.15",
+		"pdfmake": "^0.2.4",
+		"roboto-font": "^0.1.0",
+		"sharp": "^0.29.3"
+	},
+	"devDependencies": {
+		"pug": "^3.0.2"
+	}
+}

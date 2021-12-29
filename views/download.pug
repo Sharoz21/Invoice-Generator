@@ -1,0 +1,6 @@
+extends base
+block content
+  div.container.mt-5
+    h1 YOUR INVOICE IS READY!
+    a.btn.btn-primary(data-id=`${path}` id="download-btn") Download
+  script(src='./js/downloadInvoice.js')
